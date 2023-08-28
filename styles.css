@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +26,6 @@ img {
     display: flex;
     align-items: center;
 }
-
 
 /*NAVBAR*/
 #busqueda {
@@ -123,7 +124,6 @@ img {
 }
 
 /* Estilos para iconos */
-.chanel,
 .youtube {
     border-radius: 50%;
     margin-right: 15px;
