@@ -94,13 +94,12 @@ img {
 
 /*SIDEBAR*/
 .menu-lateral {
-    width: 6%;
+    width: 5%;
     height: auto;
     background-color: #fff;
     position: static;
     top: 0;
-    padding-left: 1vw;
-    padding-top: 13vh;
+    margin: 1%;
     transition: 0.5s all ease;
 }
 
