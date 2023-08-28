@@ -11,9 +11,13 @@ let fetchApi = async () => {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
+        console.error('carga de datos exitosa');
         return result;
     } catch (error) {
-        console.error(error);
+        console.error('carga de datos fallida: ' + error);
+        const response = await fetch('test.json');
+        const result = await response.json();
+        return result;
     }
 }
 
@@ -63,3 +67,34 @@ let homePage = async () => {
 };
 
 homePage();
+
+// <div id="card" class="col-12 col-lg-4 col-md-6 col-sm-12">
+//                     <div class="card mt-2 border-white">
+//                         <img class="card-img-top" src="./assets/hq720.webp" alt="Title">
+//                         <div class="card-body">
+//                             <div class="row justify-content-center align-items-center g-2">
+//                                 <div class="d-flex">
+//                                     <div class="me-3 m">
+//                                         <img class="rounded-5 thumbnail" src="./assets/unnamed.jpg" alt="">
+//                                     </div>
+//                                     <div >
+//                                         <h4 class="card-title">Video random</h4>
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                             <div class="row justify-content-start align-items-center mt-2">
+//                                 <div class="col">
+//                                     <p class="card-text">Channel name</p>
+//                                 </div>
+//                             </div>
+//                             <div class="row justify-content-center align-items-center mt-2">
+//                                 <div class="col">
+//                                     <p class="card-text">72k visualizaciones</p>
+//                                 </div>
+//                                 <div class="col">
+//                                     <p class="card-text"> hace 5 dias</p>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
