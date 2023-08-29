@@ -39,22 +39,22 @@ let homePage = async () => {
                     </div>
                     <img class="card-img-top" src="${value.video.thumbnails[3].url}" alt="Title">
                     <div class="card-body">
-                        <div class="row justify-content-center align-items-center g-2">
-                            <div class="d-flex">
-                                <div class="me-3 m">
+                        <div class="row align-items-center">
+                            <div class="d-flex justify-content-start">
+                                <div class="me-3">
                                     <img class="rounded-5 thumbnail" src="../assets/img/creativeCode.jpg" alt="">
                                 </div>
                                 <div>
-                                    <p class="card-title fw-bold mt-1">${value.video.title}</p>
+                                    <p class="card-title fw-bold mt-2">${value.video.title}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="row justify-content-start align-items-center mt-2">
+                        <div class="row justify-content-start align-items-center">
                             <div class="col">
                                 <p class="card-text">CreativeCode</p>
                             </div>
                         </div>
-                        <div class="row justify-content-center align-items-center mt-2">
+                        <div class="row justify-content-center align-items-center">
                             <div class="col">
                                 <p class="card-text">${value.video.stats.views} visualizaciones</p>
                             </div>
@@ -74,40 +74,33 @@ let homePage = async () => {
 };
 
 
-let loadThumbnails = () => {
-    const videoCards = [...document.querySelectorAll('.card')];
-    console.log(videoCards.map);
+// let loadThumbnails = () => {
+//     const videoCards = [...document.querySelectorAll('.card')];
+//     console.log(videoCards.map);
 
-    videoCards.forEach((card) => {
-        console.log(card);
-        card.addEventListener('mouseover', (e) => {
-            console.log(e);
-            card.style.display = 'block';
-        });
-    });
-}
+//     videoCards.forEach((card) => {
+//         console.log(card);
+//         card.addEventListener('mouseover', (e) => {
+//             console.log(e);
+//             card.style.display = 'block';
+//         });
+//     });
+// }
 
 
-let loadVideo = async () => {
+let loadVideo = async (id) => {
     //let response = await fetchApi(); //garantiza que la variable se tome luego de que la promesa finalice
-    let data = await fetch('test.json');
-    let dataJson = await data.json();
     let elementoPadre = document.querySelector('#video');
-    console.log(dataJson.contents[0].video.thumbnails[0].url);
     let videos = `
-    ${dataJson.contents.map((value) => `
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/uyEUVgNMvGI?si=MktBfvveU60qSNKv"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
+
+    <iframe width="1280" height="720" 
+        src="https://www.youtube.com/embed/${id}?si=1HNZAdjym_e6hwO1&autoplay=1" 
+        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
     </iframe>
 
-    `).join(" ")}
     `;
-
     elementoPadre.insertAdjacentHTML("beforeend", videos);
-
-    //console.log(response);
 };
 
 
@@ -140,5 +133,5 @@ export {
     homePage,
     wrapSuggestions,
     loadVideo,
-    loadThumbnails
+    // loadThumbnails
 };
