@@ -1,12 +1,11 @@
-import { homePage, loadThumbnails, loadVideo } from "./getAll.js";
+import { homePage,loadVideo } from "./getAll.js";
 
 window.addEventListener('load', () => {
-    console.log(window.location);
-    window.location
+    loadVideo(window.location.search.slice(7, window.location.search.slice.length -5));
+    console.log(window.location.search.slice(5));
 });
 
 
 
 homePage();
-loadVideo();
-loadThumbnails();
+// loadThumbnails();
