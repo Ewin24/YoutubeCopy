@@ -81,7 +81,7 @@ let loadThumbnails = () => {
         console.log(card);
         card.addEventListener('mouseover', (e) => {
             console.log(e);
-            card.style.display = 'block'; 
+            card.style.display = 'block';
         });
     });
 }
