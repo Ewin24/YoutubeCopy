@@ -1,5 +1,5 @@
-import { homePage, loadVideo } from "./getAll.js";
+import { homePage, loadThumbnails } from "./getAll.js";
 
 
 homePage();
-loadVideo();
+loadThumbnails();
