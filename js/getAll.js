@@ -1,7 +1,7 @@
 const channelId = 'UC8fkwsjcI_MhralEX1g4OBw';
 
 let fetchApi = async () => {
-    const url = 'https://youtube138.p.rapidapi.com/channel/videos/?id=UC8fkwsjcI_MhralEX1g4OBw&hl=en&gl=US';
+    const url = `https://youtube138.p.rapidapi.com/channel/videos/?id=${channelId}&hl=en&gl=US`;
     const options = {
         method: 'GET',
         headers: {
@@ -23,9 +23,8 @@ let fetchApi = async () => {
     }
 }
 
-
 let fetchSearch = async (q) => {
-    const url = `https://youtube138.p.rapidapi.com/channel/search/?id=UC8fkwsjcI_MhralEX1g4OBw&q=${q}&hl=en&gl=US`;
+    const url = `https://youtube138.p.rapidapi.com/channel/search/?id=${channelId}&q=${q}&hl=en&gl=US`;
     const options = {
         method: 'GET',
         headers: {
@@ -44,9 +43,9 @@ let fetchSearch = async (q) => {
 }
 
 let homePage = async () => {
-    // let dataJson = await fetchApi(); //garantiza que la variable se tome luego de que la promesa finalice
-    let data = await fetch('../data/channelVideos.json');
-    let dataJson = await data.json();
+    let dataJson = await fetchApi(); //garantiza que la variable se tome luego de que la promesa finalice
+    // let data = await fetch('../data/channelVideos.json');
+    // let dataJson = await data.json();
     let elementoPadre = document.querySelector('#video-container');
     let videos = `
     ${dataJson.contents.map((value) => `
@@ -104,7 +103,6 @@ let homePage = async () => {
 // }
 
 let loadVideo = async (id) => {
-    //let response = await fetchApi(); //garantiza que la variable se tome luego de que la promesa finalice
     let elementoPadre = document.querySelector('#video');
     let videos = `
     <iframe width="720" height="480" 
