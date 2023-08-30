@@ -60,7 +60,7 @@ let homePage = async () => {
                         <div class="row align-items-center">
                             <div class="d-flex justify-content-start">
                                 <div class="me-3">
-                                    <img class="rounded-5 thumbnail" src="../assets/img/creativeCode.jpg" alt="">
+                                    <img class="rounded-5 thumbnail" src="assets/img/creativeCode.jpg" alt="">
                                 </div>
                                 <div>
                                     <p class="card-title fw-bold mt-2">${value.video.title}</p>
