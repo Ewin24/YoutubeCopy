@@ -35,6 +35,45 @@ img {
     align-items: center;
 }
 
+
+.card {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.card:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+}
+
+.thumbnail {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+
+
 /*NAVBAR*/
 #busqueda {
     width: 100%;
@@ -90,98 +129,6 @@ img {
 }
 
 /*Principal*/
-.main {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-#video-container {
-    margin-top: 65px !important;
-}
-
-/*SIDEBAR*/
-.menu-lateral {
-    width: 5%;
-    height: auto;
-    background-color: #fff;
-    position: static;
-    top: 0;
-    margin-top: 69px !important;
-    margin: 1%;
-    transition: 0.5s all ease;
-}
-
-.menu-lateral.active {
-    width: 18%;
-    position: fixed;
-}
-
-.menu-lateral a p {
-    display: none;
-    font-size: 1vw;
-}
-
-.menu-lateral h3 {
-    display: none;
-    font-size: 1vw;
-}
-
-.menu-lateral p {
-    display: none;
-}
-
-/* Estilos para iconos */
-.youtube {
-    border-radius: 50%;
-    margin-right: 15px;
-    width: 30px !important;
-}
-
-.youtube {
-    width: 40px !important;
-    padding: 0px !important;
-}
-
-#about-final.active {
-    display: block;
-    padding-top: 3p;
-    font-size: 1vw;
-    cursor: pointer;
-}
-
-.menu-lateral a img {
-    width: 25px;
-    margin-right: 20px;
-}
-
-.menu-lateral a {
-    display: flex;
-    padding: 9px 10px;
-    color: black;
-    margin-bottom: 7px;
-}
-
-.menu-lateral a:hover {
-    background: #e5e5e5;
-    border-radius: 10px;
-}
-
-.menu-lateral hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    width: 95%;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.menu-lateral a.active {
-    font-weight: bold;
-    border-radius: 20px;
-}
-
-/* filters */
 
 
 /* search bar */
@@ -201,12 +148,6 @@ img {
     border-radius: 20px;
     margin-left: 5%;
     margin-right: 5%;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
 }
 
 /* input area */
@@ -265,4 +206,104 @@ i .fa-solid {
 .card-body {
     padding-left: 0% !important;
     padding-top: 1% !important;
+}
+
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    margin-top: 69px;
+}
+
+.sidebar {
+    margin-top: 7% !important;
+}
+
+/*SIDEBAR*/
+.menu-lateral {
+    width: 5%;
+    height: auto;
+    background-color: #fff;
+    position: static;
+    top: 0;
+    margin-top: 69px !important;
+    margin: 1%;
+    transition: 0.5s all ease;
+}
+
+.menu-lateral.active {
+    width: 18%;
+    position: fixed;
+}
+
+.menu-lateral a p {
+    display: none;
+    font-size: 1vw;
+}
+
+.menu-lateral h3 {
+    display: none;
+    font-size: 1vw;
+}
+
+.menu-lateral p {
+    display: none;
+}
+
+/* Estilos para iconos */
+.youtube {
+    border-radius: 50%;
+    margin-right: 15px;
+    width: 30px !important;
+}
+
+.youtube {
+    width: 40px !important;
+    padding: 0px !important;
+}
+
+#about-final.active {
+    display: block;
+    padding-top: 3p;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.menu-lateral {
+    margin-top: 4%;
+}
+
+.menu-lateral a img {
+    width: 25px;
+    margin-right: 20px;
+}
+
+.menu-lateral a {
+    display: flex;
+    padding: 9px 10px;
+    color: black;
+    margin-bottom: 7px;
+}
+
+.menu-lateral a:hover {
+    background: #e5e5e5;
+    border-radius: 10px;
+}
+
+.menu-lateral hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 95%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.menu-lateral a.active {
+    font-weight: bold;
+    border-radius: 20px;
 }
