@@ -2,6 +2,7 @@ import { homePage, loadVideo, wrapSuggestions } from "./getAll.js";
 
 window.addEventListener('load', () => {
     loadVideo(window.location.search.slice(7, window.location.search.slice.length - 5));
+    homePage();
 });
 
 
@@ -15,4 +16,3 @@ barraBusqueda.addEventListener('keyup', () => {
     }
 }
 )
-homePage();
