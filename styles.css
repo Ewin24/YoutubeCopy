@@ -197,7 +197,6 @@ img {
 /* search container */
 .search-box {
     width: 400px;
-    background: var(--cream);
     border-radius: 20px;
     margin-left: 5%;
     margin-right: 5%;

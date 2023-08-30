@@ -1,7 +1,7 @@
 const channelId = 'UC8fkwsjcI_MhralEX1g4OBw';
 
 let fetchApi = async () => {
-    const url = 'https://youtube138.p.rapidapi.com/home/?hl=en&gl=US';
+    const url = 'https://youtube138.p.rapidapi.com/channel/videos/?id=UC8fkwsjcI_MhralEX1g4OBw&hl=en&gl=US';
     const options = {
         method: 'GET',
         headers: {
@@ -77,7 +77,6 @@ let homePage = async () => {
 // let loadThumbnails = () => {
 //     const videoCards = [...document.querySelectorAll('.card')];
 //     console.log(videoCards.map);
-
 //     videoCards.forEach((card) => {
 //         console.log(card);
 //         card.addEventListener('mouseover', (e) => {
@@ -117,11 +116,24 @@ let wrapSuggestions = async (query) => {
     try {
         const response = await fetch('../data/channelVideos.json');
         const result = await response.json();
+        let elementoPadre = document.querySelector('#result-box');
+        let elementoSugerencias = `
+        ${result.contents.map((value) =>
+            `
+           <a href="../video.html?id='${value.video.vizdeoId}'">
+               <li>
+                   ${value.video.title}
+               </li>
+           </a>
+       `).join(" ")} 
+       `;
+        elementoPadre.innerHTML = '';
+        document.querySelector('.result-box').style.display = 'block';
+        elementoPadre.insertAdjacentHTML('beforeend', elementoSugerencias);
     } catch (error) {
         console.error(error);
     }
 }
-// wrapSuggestions()
 
 //TODO: hacer el menu de busquedas 
 //TODO: hacer que el menu de suscripciones sea funcional
@@ -129,9 +141,8 @@ let wrapSuggestions = async (query) => {
 
 
 export {
-    //loadVideo,
     homePage,
     wrapSuggestions,
-    loadVideo,
+    loadVideo
     // loadThumbnails
 };
