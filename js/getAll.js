@@ -5,7 +5,7 @@ let fetchApi = async () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '65ad5ad44bmsh773a97a88fa6da5p1534e5jsn00dec9fa147b',
+            'X-RapidAPI-Key': '0b37b1aa9cmsh258259de86e670bp1d68e4jsn9570924ee435',
             'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
         }
     };
@@ -28,7 +28,7 @@ let fetchSearch = async (q) => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '65ad5ad44bmsh773a97a88fa6da5p1534e5jsn00dec9fa147b',
+            'X-RapidAPI-Key': '0b37b1aa9cmsh258259de86e670bp1d68e4jsn9570924ee435',
             'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
         }
     };
