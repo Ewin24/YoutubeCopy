@@ -44,9 +44,11 @@ let fetchSearch = async (q) => {
 
 let homePage = async () => {
     let dataJson = await fetchApi(); //garantiza que la variable se tome luego de que la promesa finalice
+    console.log(dataJson);
     // let data = await fetch('../data/channelVideos.json');
     // let dataJson = await data.json();
     let elementoPadre = document.querySelector('#video-container');
+
     let videos = `
     ${dataJson.contents.map((value) => `
         <a class="col-12 col-lg-4 col-md-6 col-sm-12" href="../video.html?id='${value.video.videoId}'">
@@ -103,15 +105,17 @@ let homePage = async () => {
 // }
 
 let loadVideo = async (id) => {
-    let elementoPadre = document.querySelector('#video');
-    let videos = `
-    <iframe width="720" height="480" 
-        src="https://www.youtube.com/embed/${id}?si=1HNZAdjym_e6hwO1&autoplay=1" 
-        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
-        clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-    </iframe>
-    `;
-    elementoPadre.insertAdjacentHTML("beforeend", videos);
+    if(id.length > 5){
+        let elementoPadre = document.querySelector('#video');
+        let videos = `
+        <iframe width="720" height="480" 
+            src="https://www.youtube.com/embed/${id}?si=1HNZAdjym_e6hwO1&autoplay=1" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+        `;
+        elementoPadre.insertAdjacentHTML("beforeend", videos);
+    }
 };
 
 let wrapSuggestions = async (q) => {
